@@ -5,9 +5,16 @@ header{
   height: 80px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+img{
+  padding-left: 22px;
+  width: 75px;
+  height: 53px;
 }
 .people{
   font-size: 30px;
+  padding-right: 24px;
 }
 .container{
   width: 100%;
@@ -16,6 +23,10 @@ header{
   bottom: 0px;
   margin: 80px 0px;
   background-color: #E5E5E5;
+}
+.message{
+  width: 100%;
+  
 }
 footer{
   position: fixed;
@@ -26,5 +37,7 @@ footer{
   align-items: center;
 }
 .paper-plane{
+  position: absolute;
+  right: 27px;
   font-size: 26px;
 }
