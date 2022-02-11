@@ -1,6 +1,45 @@
 body{
   font-family: 'Roboto', sans-serif;
 }
+.hidden{
+  visibility: hidden;
+}
+.login_screen{
+  z-index: 4;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bigLogo{
+  width: 130px;
+  height: 92px;
+  padding: 72px 0 94px 0;
+}
+.inputName{
+  width: 261px;
+  height: 54px;
+  border: 1px solid #D7D7D7;
+  border-radius: 4px;
+  text-align: center;
+}
+.inputName::placeholder{
+  color: #EAEAEA;
+  font-size: 18px;
+}
+.loginButton{
+  margin-top: 15px;
+  width: 109px;
+  height: 45px;
+  border: none;
+  border-radius: 9px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #696969;
+}
 header{
   position: fixed;
   top: 0px;
@@ -10,7 +49,7 @@ header{
   align-items: center;
   justify-content: space-between;
 }
-img{
+.smallLogo{
   padding-left: 22px;
   width: 75px;
   height: 53px;
@@ -38,10 +77,20 @@ footer{
   display: flex;
   align-items: center;
 }
+.chat{
+  border: none;
+}
 .paper-plane{
   position: absolute;
   right: 27px;
   font-size: 26px;
+}
+.shadow{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
 aside{
   width: 259px;
@@ -50,6 +99,7 @@ aside{
   right: -258px;
   z-index: 2;
   background-color: #ffffff;
+  transition: 1250ms;
 }
 .aside_line{
   padding-left: 20px ;
@@ -68,5 +118,6 @@ h2{
   padding: 25px 20px;
 }
 h3{
-  
+  font-size: 16px;
+  font-weight: 400;
 }

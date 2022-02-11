@@ -15,18 +15,25 @@
     <link href="styles/style.css" rel="stylesheet" />
   </head>
   <body>
+    <div class="login_screen">
+      <img class="bigLogo" src="media/logo.jpg" alt="logo bate papo uol" />
+      <input class="inputName" type="text" placeholder="Digite seu nome" />
+      <input class="loginButton" type="button" value="Entrar" />
+    </div>
     <main>
       <header>
-        <img src="media/logo.jpg" alt="logo bate papo uol" />
+        <img class="smallLogo" src="media/logo.jpg" alt="logo bate papo uol" />
         <ion-icon onclick="openAside()" class="people" name="people"></ion-icon>
       </header>
       <div class="container">
         <div class="message"></div>
       </div>
       <footer>
+        <input class="chat" type="text" placeholder="Escreva aqui..." />
         <ion-icon class="paper-plane" name="paper-plane-outline"></ion-icon>
       </footer>
     </main>
+    <div class="shadow hidden"></div>
     <aside>
       <h2>Escolha um contato para enviar mensagem:</h2>
       <div class="aside_line">
