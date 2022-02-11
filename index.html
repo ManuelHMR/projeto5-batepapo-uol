@@ -5,20 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link href="styles/reset.css" rel="stylesheet" />
     <link href="styles/style.css" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <img src="media/logo.jpg" alt="logo bate papo uol"/>
-      <ion-icon class="people" name="people"></ion-icon>
-    </header>
-    <div class="container">
-      <div class="message"></div>
-    </div>
-    <footer>
-      <ion-icon class="paper-plane" name="paper-plane-outline"></ion-icon>
-    </footer>
+    <main>
+      <header>
+        <img src="media/logo.jpg" alt="logo bate papo uol" />
+        <ion-icon onclick="openAside()" class="people" name="people"></ion-icon>
+      </header>
+      <div class="container">
+        <div class="message"></div>
+      </div>
+      <footer>
+        <ion-icon class="paper-plane" name="paper-plane-outline"></ion-icon>
+      </footer>
+    </main>
+    <aside>
+      <h2>Escolha um contato para enviar mensagem:</h2>
+      <div class="aside_line">
+        <ion-icon name="people"></ion-icon>
+        <h3>Todos</h3>
+      </div>
+      <div class="aside_line">
+        <ion-icon name="person-circle"></ion-icon>
+        <h3>João</h3>
+      </div>
+      <div class="aside_line">
+        <ion-icon name="person-circle"></ion-icon>
+        <h3>Maria</h3>
+      </div>
+      <h2>Espolha a visibilidade:</h2>
+      <div class="aside_line">
+        <ion-icon name="lock-open"></ion-icon>
+        <h3>Público</h3>
+      </div>
+      <div class="aside_line">
+        <ion-icon name="lock-closed"></ion-icon>
+        <h3>Reservadamente</h3>
+      </div>
+    </aside>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"

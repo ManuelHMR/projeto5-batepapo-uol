@@ -1,3 +1,6 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
 header{
   position: fixed;
   top: 0px;
@@ -26,7 +29,6 @@ img{
 }
 .message{
   width: 100%;
-  
 }
 footer{
   position: fixed;
@@ -40,4 +42,31 @@ footer{
   position: absolute;
   right: 27px;
   font-size: 26px;
+}
+aside{
+  width: 259px;
+  height: 100%;
+  position: fixed;
+  right: -258px;
+  z-index: 2;
+  background-color: #ffffff;
+}
+.aside_line{
+  padding-left: 20px ;
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+.aside_line ion-icon{
+  font-size: 20px;
+  padding-right: 7px;
+}
+h2{
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+  padding: 25px 20px;
+}
+h3{
+  
 }
