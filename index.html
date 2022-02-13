@@ -18,7 +18,12 @@
     <div class="login_screen">
       <img class="bigLogo" src="media/logo.jpg" alt="logo bate papo uol" />
       <input class="inputName" type="text" placeholder="Digite seu nome" />
-      <input class="loginButton" type="button" value="Entrar" />
+      <input
+        class="loginButton"
+        type="button"
+        onclick="login()"
+        value="Entrar"
+      />
     </div>
     <main>
       <header>
@@ -26,14 +31,18 @@
         <ion-icon onclick="openAside()" class="people" name="people"></ion-icon>
       </header>
       <div class="container">
-        <div class="message"></div>
+        <div class="messages"></div>
       </div>
       <footer>
         <input class="chat" type="text" placeholder="Escreva aqui..." />
-        <ion-icon class="paper-plane" name="paper-plane-outline"></ion-icon>
+        <ion-icon
+          onclick="addMessage()"
+          class="paper-plane"
+          name="paper-plane-outline"
+        ></ion-icon>
       </footer>
     </main>
-    <div class="shadow hidden"></div>
+    <div onclick="removeShadow()" class="shadow hidden"></div>
     <aside>
       <h2>Escolha um contato para enviar mensagem:</h2>
       <div class="aside_line">
@@ -58,6 +67,8 @@
         <h3>Reservadamente</h3>
       </div>
     </aside>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
