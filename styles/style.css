@@ -75,6 +75,7 @@ header{
 .messages{
   width: 100%;
   padding-top: 26px;
+  padding-bottom: 80px;
 }
 .singleMessage{
   width: 100%;
@@ -85,7 +86,16 @@ header{
   margin-top: 4px;
   padding-left: 8px;
 }
-span{
+.status{
+  background-color: #DCDCDC;
+}
+.private_message{
+  background-color: #FFDEDE;
+}
+span .timeStyle{
+  color: grey;
+}
+span .strong{
   font-weight: bold;
 }
 footer{
@@ -97,7 +107,7 @@ footer{
   color: #000000;
   align-items: center;
   background-color: #ffffff;
-  z-index: 2;
+  z-index: 1;
 }
 .chat{
   padding-left: 17px;
@@ -109,6 +119,9 @@ footer{
 }
 .chat:focus{
   outline: none;
+}
+.typeStatus{
+  background-color: #DCDCDC;
 }
 .paper-plane{
   position: absolute;
