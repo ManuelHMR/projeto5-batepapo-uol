@@ -24,7 +24,7 @@ function logged(){
   document.querySelector('footer').classList.remove('hidden')
   setInterval(stayLogged, 5000)
   setInterval(loadMessages, 3000)
-  setInterval(loadAside, 10000)
+  // setInterval(loadAside, 10000)
   responseMessage.then(responseMessageReturn)
 }
 function loginError(loginErrorData){
@@ -75,6 +75,7 @@ function displayAllMessages(){
 function openAside() {
   document.querySelector('aside').setAttribute('style', 'right: 0px')
   document.querySelector('.shadow').classList.remove('hidden')
+  loadAside()
 }
 function loadAside(){
   participantsPromise = axios.get(urlPARTICIPANTS)
@@ -97,6 +98,13 @@ function checkUser(e){
     check?.classList.remove('selectedUser')
     e.querySelector(".checkMark").classList.remove("hidden")
     e.querySelector(".checkMark").classList.add("selectedUser")
+}
+function checkView(e){
+  let check = document.querySelector(".selectedView")
+    check?.classList.add("hidden")
+    check?.classList.remove('selectedView')
+    e.querySelector(".viewCheckMark").classList.remove("hidden")
+    e.querySelector(".viewCheckMark").classList.add("selectedView")
 }
 function removeShadow(){
   document.querySelector('aside').setAttribute('style', 'right: -258px')

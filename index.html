@@ -54,13 +54,15 @@
       <div class="users">
       </div>
       <h2>Espolha a visibilidade:</h2>
-      <div class="aside_line" >
+      <div class="aside_line" onclick="checkView(this)">
         <ion-icon name="lock-open"></ion-icon>
         <h3>Público</h3>
+        <ion-icon class="viewCheckMark selectedView" name="checkmark-outline"></ion-icon>
       </div>
-      <div class="aside_line">
+      <div class="aside_line" onclick="checkView(this)">
         <ion-icon name="lock-closed"></ion-icon>
         <h3>Reservadamente</h3>
+        <ion-icon class="viewCheckMark hidden" name="checkmark-outline"></ion-icon>
       </div>
     </aside>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

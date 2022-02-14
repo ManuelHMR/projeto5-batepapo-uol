@@ -145,6 +145,7 @@ aside{
   z-index: 2;
   background-color: #ffffff;
   transition: 1250ms;
+  overflow-y: auto;
 }
 .aside_line{
   padding-left: 20px ;
@@ -160,6 +161,11 @@ aside{
   padding-right: 7px;
 }
 .selectedUser{
+  position: absolute;
+  right: 10px;
+  color: green;
+}
+.viewCheckMark{
   position: absolute;
   right: 10px;
   color: green;
