@@ -28,7 +28,6 @@ function logged(){
   responseMessage.then(responseMessageReturn)
 }
 function loginError(loginErrorData){
-  console.log(loginErrorData)
   alert(`Erro no login! Digite outro nome.`)
 }
 function stayLogged(){
@@ -36,7 +35,6 @@ function stayLogged(){
   axios.post(urlSTATUS, nameLogged)
 }
 function loadMessages(){
-  displayedMessages.innerHTML = ''
   responseMessage = axios.get(urlMESSAGES)
   responseMessage.then(responseMessageReturn)
 }
@@ -52,11 +50,11 @@ function addMessage() {
   statusPromise.then()
 }
 function newMessage(type, time, from, to, msg) {
-  displayedMessages.innerHTML = displayedMessages.innerHTML + `<div class="singleMessage ${type}"><span><span class="timeStyle">(${time})</span> <span class="strong">${from}</span> para <span class="strong">${to}</span>: ${msg}</span></div>`;
+  displayedMessages.innerHTML = displayedMessages.innerHTML + `<div class="singleMessage ${type}" data-identifier="message"><span><span class="timeStyle">(${time})</span> <span class="strong">${from}</span> para <span class="strong">${to}</span>: ${msg}</span></div>`;
 }
 function responseMessageReturn(apiMessages){
+  displayedMessages.innerHTML = ''
   apiMessagesObj = apiMessages.data
-  console.log(apiMessagesObj)
   displayAllMessages()
 }
 function displayAllMessages(){
@@ -78,11 +76,16 @@ function participantsPromiseLoad(participantsData){
   usersList.innerHTML = ''
  for(let j = 0; j < participantsData.data.length; j++){
    usersList.innerHTML = usersList.innerHTML + 
-   `<div class="aside_line">
+   `<div class="aside_line" onclick="checkUser(this)">
    <ion-icon name="person-circle"></ion-icon>
    <h3>${participantsData.data[j].name}</h3>
+   <ion-icon class="checkmark hidden" name="checkmark-outline"></ion-icon>
   </div>`
  }
+}
+function checkUser(e){
+  e.querySelector(".checkmark").classList.remove("hidden")
+  e.querySelector(".checkmark").classList.add("checkedUser")
 }
 function removeShadow(){
   document.querySelector('aside').setAttribute('style', 'right: -258px')

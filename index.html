@@ -17,12 +17,13 @@
   <body>
     <div class="login_screen">
       <img class="bigLogo" src="media/logo.jpg" alt="logo bate papo uol" />
-      <input class="inputName" type="text" placeholder="Digite seu nome" />
+      <input class="inputName" type="text" placeholder="Digite seu nome" data-identifier="enter-name"/>
       <input
         class="loginButton"
         type="button"
         onclick="login()"
         value="Entrar"
+        data-identifier="start"
       />
     </div>
     <main>
@@ -34,7 +35,7 @@
         <div class="messages"></div>
       </div>
       <footer class="hidden">
-        <input class="chat" type="text" placeholder="Escreva aqui..." />
+        <input class="chat" type="text" placeholder="Escreva aqui..." ata-identifier="send-message"/>
         <ion-icon
           onclick="addMessage()"
           class="paper-plane"
