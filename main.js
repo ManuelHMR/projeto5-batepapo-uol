@@ -1,14 +1,16 @@
 const urlPARTICIPANTS = "https://mock-api.driven.com.br/api/v4/uol/participants";
-const urlSTATUS = "https://mock-api.driven.com.br/api/v4/uol/participants ";
+const urlSTATUS = "https://mock-api.driven.com.br/api/v4/uol/status ";
 const urlMESSAGES ="https://mock-api.driven.com.br/api/v4/uol/messages";
 let userName = document.querySelector('.inputName')
 let userObj
-let statusPromise
 let participantsPromise
 let messagePromise
 let apiMessagesObj
 let responseMessage = axios.get(urlMESSAGES)
 let displayedMessages = document.querySelector('.messages')
+let usersList = document.querySelector(".users")
+
+
 function login() {
   userObj = {
     name: userName.value
@@ -20,8 +22,9 @@ function login() {
 function logged(){
   document.querySelector('.login_screen').classList.add('hidden')
   document.querySelector('footer').classList.remove('hidden')
+  setInterval(stayLogged, 5000)
   setInterval(loadMessages, 3000)
-  setInterval(stayLogged, 3000)
+  setInterval(loadAside, 10000)
   responseMessage.then(responseMessageReturn)
 }
 function loginError(loginErrorData){
@@ -29,11 +32,8 @@ function loginError(loginErrorData){
   alert(`Erro no login! Digite outro nome.`)
 }
 function stayLogged(){
-  userObj = {
-    name: userName.value
-  }
-  statusPromise = axios.post(urlSTATUS, userObj)
-  statusPromise.then()
+  let nameLogged = {name: userName.value}
+  axios.post(urlSTATUS, nameLogged)
 }
 function loadMessages(){
   displayedMessages.innerHTML = ''
@@ -70,7 +70,27 @@ function openAside() {
   document.querySelector('aside').setAttribute('style', 'right: 0px')
   document.querySelector('.shadow').classList.remove('hidden')
 }
+function loadAside(){
+  participantsPromise = axios.get(urlPARTICIPANTS)
+  participantsPromise.then(participantsPromiseLoad)
+}
+function participantsPromiseLoad(participantsData){
+  usersList.innerHTML = ''
+ for(let j = 0; j < participantsData.data.length; j++){
+   usersList.innerHTML = usersList.innerHTML + 
+   `<div class="aside_line">
+   <ion-icon name="person-circle"></ion-icon>
+   <h3>${participantsData.data[j].name}</h3>
+  </div>`
+ }
+}
 function removeShadow(){
   document.querySelector('aside').setAttribute('style', 'right: -258px')
   document.querySelector('.shadow').classList.add('hidden')
 }
+document.addEventListener("keypress", function(e){
+  if(e.key === "Enter"){
+    addMessage()
+    document.querySelector('.chat').value = ''
+  }
+})

@@ -1,6 +1,7 @@
 body{
   font-family: 'Roboto', sans-serif;
   background-color: #E5E5E5;
+  overflow-x: hidden;
 }
 .hidden{
   visibility: hidden;
@@ -112,6 +113,7 @@ footer{
 .chat{
   padding-left: 17px;
   font-size: 17px;
+  width: calc(100% - 40px);
   font-style: italic;
   font-weight: 400;
   border: none;
