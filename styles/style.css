@@ -159,7 +159,7 @@ aside{
   font-size: 20px;
   padding-right: 7px;
 }
-.checkedUser{
+.selectedUser{
   position: absolute;
   right: 10px;
   color: green;

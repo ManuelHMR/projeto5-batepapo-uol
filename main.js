@@ -39,12 +39,20 @@ function loadMessages(){
   responseMessage.then(responseMessageReturn)
 }
 function addMessage() {
+  let toSelected = document.querySelector(".selectedUser")
+  let toName = toSelected.parentNode.querySelector("h3").innerHTML
   let newUserMessage = document.querySelector('.chat').value
+  let typeMessage
+  if(toName != "Todos"){
+    typeMessage = "private_message"
+  }else{
+    typeMessage = "Todos"
+  }
   userObj = {
     from: userName.value,
-    to: "Todos",
+    to: toName,
     text: newUserMessage,
-    type: "message"
+    type: typeMessage
   }
   statusPromise = axios.post(urlMESSAGES, userObj)
   statusPromise.then()
@@ -79,13 +87,16 @@ function participantsPromiseLoad(participantsData){
    `<div class="aside_line" onclick="checkUser(this)">
    <ion-icon name="person-circle"></ion-icon>
    <h3>${participantsData.data[j].name}</h3>
-   <ion-icon class="checkmark hidden" name="checkmark-outline"></ion-icon>
+   <ion-icon class="checkMark hidden" name="checkmark-outline"></ion-icon>
   </div>`
  }
 }
 function checkUser(e){
-  e.querySelector(".checkmark").classList.remove("hidden")
-  e.querySelector(".checkmark").classList.add("checkedUser")
+  let check = document.querySelector(".selectedUser")
+    check?.classList.add("hidden")
+    check?.classList.remove('selectedUser')
+    e.querySelector(".checkMark").classList.remove("hidden")
+    e.querySelector(".checkMark").classList.add("selectedUser")
 }
 function removeShadow(){
   document.querySelector('aside').setAttribute('style', 'right: -258px')

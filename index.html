@@ -46,14 +46,15 @@
     <div onclick="removeShadow()" class="shadow hidden"></div>
     <aside>
       <h2>Escolha um contato para enviar mensagem:</h2>
-      <div class="aside_line">
+      <div class="aside_line" onclick="checkUser(this)">
         <ion-icon name="people"></ion-icon>
         <h3>Todos</h3>
+        <ion-icon class="checkMark selectedUser" name="checkmark-outline"></ion-icon>
       </div>
       <div class="users">
       </div>
       <h2>Espolha a visibilidade:</h2>
-      <div class="aside_line">
+      <div class="aside_line" >
         <ion-icon name="lock-open"></ion-icon>
         <h3>Público</h3>
       </div>
