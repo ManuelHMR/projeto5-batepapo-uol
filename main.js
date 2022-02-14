@@ -85,7 +85,7 @@ function participantsPromiseLoad(participantsData){
   usersList.innerHTML = ''
  for(let j = 0; j < participantsData.data.length; j++){
    usersList.innerHTML = usersList.innerHTML + 
-   `<div class="aside_line" onclick="checkUser(this)">
+   `<div class="aside_line" onclick="checkUser(this)" data-identifier="participant">
    <ion-icon name="person-circle"></ion-icon>
    <h3>${participantsData.data[j].name}</h3>
    <ion-icon class="checkMark hidden" name="checkmark-outline"></ion-icon>
